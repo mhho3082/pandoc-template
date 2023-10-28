@@ -43,9 +43,10 @@ include-before:
 
 \newpage
 
-<!-- Re-enable page numbering: -->
+<!-- Switch to normal ('arabic') page numbering -->
+<!-- ( You can also use 'roman' page numbering for preamble) -->
 
-\pagenumbering{arabic}
+`\pagenumbering{arabic}`{=latex}
 
 # Quick Start
 
@@ -149,15 +150,13 @@ Also, for some reason,
 
 # Tables
 
-Below ([@tbl:mdtable]) is a basic Markdown table,
+Below is a basic Markdown table,
 which would be rendered based on the template selected for Pandoc:
 
 | Type | A   | B   | C   |
 | ---: | --- | --- | --- |
 |    A | 1   | 2   | 3   |
 |    B | 1   | 2   | 3   |
-
-: Markdown table example {#tbl:mdtable}
 
 Here is one using the `\tabular` LaTeX command,
 which is much more configurable:
