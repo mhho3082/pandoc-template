@@ -51,10 +51,12 @@ include-before:
 
 Install the following Arch Linux packages as necessary:
 
-- [`pandoc-bin`](https://pandoc.org/):
-  The main compiler
+- Core
+  - [`pandoc-bin`](https://pandoc.org/):
+    The main compiler
   - [`meta-group-texlive-most`](https://tug.org/texlive/):
     Provides latex-to-pdf compilation
+- Filters
   - [`pandoc-crossref-bin`](https://github.com/lierdakil/pandoc-crossref):
     Allows referencing figures and more
   - [`mermaid-filter`](https://github.com/raghur/mermaid-filter):

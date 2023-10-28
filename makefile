@@ -74,6 +74,8 @@ o: open
 .PHONY:
 clean:
 	rm $(output_name).pdf $(output_name).docx -f
+	rm plots -rf
+	rm mermaid-filter.err -f
 
 .PHONY:
 c: clean
