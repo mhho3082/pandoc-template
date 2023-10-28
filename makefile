@@ -10,15 +10,13 @@
 # Settings for templates should be done
 # in YAML frontmatter in markdown files
 
-input_file = draft.md
+input_file  = draft.md
 output_name = output
-ref_bib = references.bib
-csl_file = pandoc_tools/ieee.csl
+ref_bib     = references.bib
+csl_file    = pandoc_tools/ieee.csl
+pdf_reader  = zathura
 
 all: pdf
-
-.PHONY:
-p: pdf
 
 .ONESHELL:
 .SILENT:
@@ -45,7 +43,7 @@ pdf:
 	$(input_file)
 
 .PHONY:
-d: docx
+p: pdf
 
 # For reference
 .ONESHELL:
@@ -57,19 +55,25 @@ docx:
 	$(input_file)
 
 .PHONY:
-o: open
+d: docx
+
+# Use xdg-open to open files by default
+pdf_reader ?= xdg-open
 
 .ONESHELL:
 .SILENT:
 .PHONY:
 open:
-	if [ -f $(output_name).pdf ]; then zathura $(output_name).pdf & disown; fi
+	if [ -f $(output_name).pdf ]; then $(pdf_reader) $(output_name).pdf & disown; fi
 
 .PHONY:
-c: clean
+o: open
 
 .ONESHELL:
 .SILENT:
 .PHONY:
 clean:
 	rm $(output_name).pdf $(output_name).docx -f
+
+.PHONY:
+c: clean
