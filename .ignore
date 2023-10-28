@@ -1,0 +1,13 @@
+# vim: set ft=gitignore
+
+# This ignore file is separate from .gitignore,
+# Designed to avoid searching in auxiliary files
+# (For tools such as `fd` and `rg`)
+
+# The core tools
+pandoc_tools/
+
+# The outputs
+plots/
+mermaid-filter.err
+*.pdf

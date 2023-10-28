@@ -1,0 +1,4 @@
+# The outputs
+plots/
+mermaid-filter.err
+*.pdf
