@@ -1,6 +1,6 @@
 ---
 title: |
-  \vspace{2in}
+  \vspace{2in} <!-- Adjust as appropriate -->
   \begin{tabular}{c}
     Test Document: \\
     Using Pandoc for Document Generation \\
@@ -45,27 +45,29 @@ include-before:
 
 <!-- Switch to normal ('arabic') page numbering -->
 <!-- ( You can also use 'roman' page numbering for preamble) -->
+<!-- (https://latex-tutorial.com/page-numbering-latex/) -->
 
 `\pagenumbering{arabic}`{=latex}
 
 # Quick Start
 
-Install the following Arch Linux packages as necessary:
+Install the following as necessary:
+(Their Arch Linux package names are also provided)
 
 - Core
-  - [`pandoc-bin`](https://pandoc.org/):
+  - [Pandoc](https://pandoc.org/) (`pandoc-bin`):
     The main compiler
-  - [`meta-group-texlive-most`](https://tug.org/texlive/):
+  - [TeX Live](https://tug.org/texlive/) (`meta-group-texlive-most`):
     Provides latex-to-pdf compilation
 - Filters
-  - [`pandoc-crossref-bin`](https://github.com/lierdakil/pandoc-crossref):
+  - [`pandoc-crossref`](https://github.com/lierdakil/pandoc-crossref) (`pandoc-crossref-bin`):
     Allows referencing figures and more
   - [`mermaid-filter`](https://github.com/raghur/mermaid-filter):
     Allows compiling graphs from Mermaid syntax
-  - [`pandoc-plot-bin`](https://github.com/LaurentRDC/pandoc-plot):
+  - [`pandoc-plot`](https://github.com/LaurentRDC/pandoc-plot) (`pandoc-plot-bin`):
     Allows generating graphs using code
-    - [`python-matplotlib`](https://matplotlib.org/):
-      An external library allowing usage of `matplotlib` in Arch Linux
+    - [`matplotlib`](https://matplotlib.org/) (`python-matplotlib`):
+      Plotting with Python's `matplotlib` library
 
 &nbsp;
 
