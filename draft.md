@@ -68,6 +68,7 @@ Install the following as necessary:
     Allows generating graphs using code
     - [`matplotlib`](https://matplotlib.org/) (`python-matplotlib`):
       Plotting with Python's `matplotlib` library
+    - [`python-networkx`] and [`python-scikit-learn`] for calculations
 
 &nbsp;
 
@@ -105,7 +106,7 @@ please refer to their specific filters above.
 
 # Plots
 
-```{.matplotlib format=svg caption="A matplotlib test code." #fig:plot}
+```{.py .matplotlib format=svg caption="A matplotlib test code." #fig:plot}
 import matplotlib.pyplot as plt
 
 plt.style.use("ggplot")
@@ -180,6 +181,31 @@ $$
 You can refer to
 [latex-tutorial.com/tutorials/tables](https://latex-tutorial.com/tutorials/tables/)
 for the syntax for LaTeX tables.
+
+You can also generate tables with `matplotlib`:
+
+```{.py .matplotlib format=svg caption="A matplotlib based table." #fig:mpltable}
+import matplotlib.pyplot as plt
+
+plt.style.use("ggplot")
+fig, ax = plt.subplots(figsize=(4, 1))
+
+data = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10],
+]
+
+ax.table(
+  cellText=data,
+  cellLoc="center",
+  loc="center",
+  rowLabels=["Line 1", "Line 2"],
+  colLabels=["A", "B", "C", "D", "E"]
+)
+ax.axis(False)
+
+plt.tight_layout()
+```
 
 \newpage
 

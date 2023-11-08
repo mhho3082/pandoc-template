@@ -10,11 +10,11 @@
 # Settings for templates should be done
 # in YAML frontmatter in markdown files
 
-input_file  = draft.md
-output_name = output
-ref_bib     = references.bib
-csl_file    = pandoc_tools/ieee.csl
-pdf_reader  = zathura
+input_file  ?= draft.md
+output_name ?= output
+ref_bib     ?= references.bib
+csl_file    ?= pandoc_tools/ieee.csl
+pdf_reader  ?= zathura
 
 all: pdf
 
@@ -64,7 +64,7 @@ pdf_reader ?= xdg-open
 .SILENT:
 .PHONY:
 open:
-	if [ -f $(output_name).pdf ]; then $(pdf_reader) $(output_name).pdf & disown; fi
+	if [ -f $(output_name).pdf ]; then $(pdf_reader) $(output_name).pdf &>/dev/null & disown; fi
 
 .PHONY:
 o: open
