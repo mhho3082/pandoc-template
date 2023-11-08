@@ -49,6 +49,10 @@ include-before:
 
 `\pagenumbering{arabic}`{=latex}
 
+<!-- Adjust paragraph spacing -->
+
+`\setlength\parskip{2em}`{=latex}
+
 # Quick Start
 
 Install the following as necessary:
@@ -70,8 +74,6 @@ Install the following as necessary:
       Plotting with Python's `matplotlib` library
     - [`python-networkx`] and [`python-scikit-learn`] for calculations
 
-&nbsp;
-
 Then, modify the `makefile` as appropriate:
 
 ```make
@@ -81,26 +83,45 @@ ref_bib     = references.bib
 csl_file    = pandoc_tools/ieee.csl
 ```
 
-&nbsp;
-
 Now, you can write your document in the input file(s)
 and run `make` to compile the `.pdf` document.
 For ease of use, you can run `make open` (or `make o`)
 to open the compiled file(s).
-
-&nbsp;
 
 Most markdown, HTML, and LaTeX syntaxes are allowed -
 just don't mix them up, or they may not function properly.
 For the special syntaxes for graph drawing and citing,
 please refer to their specific filters above.
 
-## Helpful syntaxes
+\newpage
+
+# Tips and Tricks
+
+## In document body
 
 - Use `\newpage` wherever you want to make a page break
 - Use `&nbsp;` to create a non-printed paragraph,
-  effectively expanding the paragraph spacing
+  effectively expanding a particular paragraph spacing
 - Use `$$` for LaTeX maths
+- Use `{.xxx}` as inline code's language block
+  to allow for configuration for various filters
+
+## As LaTeX configuration
+
+Below is how you may inject some LaTeX code
+without making it act as its own paragraph:
+
+```markdown
+`\pagenumbering{arabic}`{=latex}
+```
+
+- Use `\vspace{...}` to add some vertical spacing
+  (Helpful to create a title page)
+- `\pagenumbering{gobble}` removes the page number counting,
+  `\pagenumbering{arabic}` and other options chooses a particular counting method
+  & resets the page counter
+- Use `\setlength\parskip{...}` and other `parskip` package options
+  to modify paragraph indent and spacing
 
 \newpage
 
