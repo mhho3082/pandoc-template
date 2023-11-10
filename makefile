@@ -16,6 +16,8 @@ ref_bib     ?= references.bib
 csl_file    ?= pandoc_tools/ieee.csl
 pdf_reader  ?= zathura
 
+extra_open_files ?= 
+
 all: pdf
 
 .ONESHELL:
@@ -64,7 +66,9 @@ pdf_reader ?= xdg-open
 .SILENT:
 .PHONY:
 open:
-	if [ -f $(output_name).pdf ]; then $(pdf_reader) $(output_name).pdf &>/dev/null & disown; fi
+	for file in $(output_name).pdf $(extra_open_files); do
+	    if [ -f $$file ]; then $(pdf_reader) $$file &>/dev/null & disown; fi
+	done
 
 .PHONY:
 o: open
