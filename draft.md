@@ -105,6 +105,8 @@ please refer to their specific filters above.
 - Use `$$` for LaTeX maths
 - Use `{.xxx}` as inline code's language block
   to allow for configuration for various filters
+- The maximum list indentation the `xelatex` engine
+  could handle is 4.
 
 ## As LaTeX configuration
 
