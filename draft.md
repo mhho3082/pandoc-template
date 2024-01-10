@@ -21,7 +21,7 @@ colorlinks: true
 linkcolor: black
 
 toc: true
-toc-title: Table of Content
+toc-title: Table of Contents
 
 link-citations: true
 citecolor: black
@@ -39,7 +39,7 @@ include-before:
   - '`\newpage{}`{=latex}' # Start ToC in new page
 ...
 
-<!-- Table of Content is generated here, right after title -->
+<!-- Table of Contents is generated here, right after title -->
 
 \newpage
 
