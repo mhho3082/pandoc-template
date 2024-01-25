@@ -18,6 +18,9 @@ pdf_reader  ?= zathura
 
 extra_open_files ?= 
 
+# Use xdg-open to open files by default
+pdf_reader ?= xdg-open
+
 all: pdf
 
 .ONESHELL:
@@ -58,9 +61,6 @@ docx:
 
 .PHONY:
 d: docx
-
-# Use xdg-open to open files by default
-pdf_reader ?= xdg-open
 
 .ONESHELL:
 .SILENT:
