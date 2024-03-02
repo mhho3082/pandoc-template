@@ -1,6 +1,6 @@
 ---
 title: |
-  \vspace{2in} <!-- Adjust as appropriate -->
+  \vfill <!-- Fill up initial vertical space -->
   \begin{tabular}{c}
     Test Document: \\
     Using Pandoc for Document Generation \\
@@ -35,8 +35,9 @@ include-before:
       Please modify it to suit your needs.
     \end{obeylines}
     \normalsize
-  - '`\pagenumbering{gobble}`{=latex}' # Disable page numbering
-  - '`\newpage{}`{=latex}' # Start ToC in new page
+    \vfill <!-- Fill up remaining vertical space -->
+    \pagenumbering{gobble} <!-- Disable page numbering -->
+    \newpage <!-- Start ToC in new page -->
 ...
 
 <!-- Table of Contents is generated here, right after title -->
@@ -143,9 +144,9 @@ for ax in axs.flat:
     ax.set_ylabel("Time (seconds)")
     ax.grid()
 
-axs[1].set_yscale("log")
 axs[0].set_title("Average Time Required (linear)")
 axs[1].set_title("Average Time Required (Logarithmic)")
+axs[1].set_yscale("log")
 
 plt.tight_layout()
 ```

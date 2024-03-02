@@ -39,7 +39,6 @@ pdf:
 	pandoc \
 	--pdf-engine=xelatex \
 	--highlight-style pandoc_tools/pygments.theme \
-	--include-in-header pandoc_tools/inline_code.tex \
 	$$filter_flags \
 	--citeproc \
 	--bibliography=$(ref_bib) \
